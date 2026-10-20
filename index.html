@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2f1eb">
+    <meta name="description" content="Resize, convert, compress, and split images or convert images and PDFs with Loka Image Lab. Free browser-based tools; your files stay on your device.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Loka Image Lab — Free Image Converter & PDF Tools">
+    <meta property="og:description" content="Resize, convert, compress, and split images or work with PDFs using free browser-based tools.">
+    <meta property="og:site_name" content="Loka Image Lab">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Loka Image Lab — Free Image Converter & PDF Tools">
+    <meta name="twitter:description" content="Free browser-based image and PDF tools. Your files stay on your device.">
+    <link rel="canonical" href="https://cloudy-bil.github.io/loka-image-lab/">
+    <title>Loka Image Lab — Free Image Converter & PDF Tools</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Loka Image Lab",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "description": "Free browser-based image conversion, resizing, compression, image splitting, and PDF tools.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Loka Image Lab">
+        <span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>loka<span class="brand-dot">.</span></span>
+        <span class="brand-caption">IMAGE LAB</span>
+      </a>
+      <nav class="top-links" aria-label="Info">
+        <span class="local-pill"><i></i> <span data-i18n="local">TOOLKIT GAMBAR ONLINE</span></span>
+        <a href="#how-it-works"><span data-i18n="howLink">cara pakai</span> <span aria-hidden="true">↘</span></a>
+        <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch language to English">EN</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-star">✳</span> <span data-i18n="eyebrow">TOOLBOX BUAT FILE VISUALMU</span></p>
+          <h1><span data-i18n="headlineOne">Gambar cakep.</span><br><span class="headline-highlight" data-i18n="headlineTwo">File beres.</span></h1>
+          <p class="hero-text" data-i18n="heroCopy">Resize, convert, compress, sampai bikin grid. Tinggal drop, utak-atik dikit, beres.</p>
+          <div class="hero-stickers" aria-label="Keunggulan">
+            <span class="sticker sticker-lime" data-i18n="stickerFree">GRATIS TERUS</span>
+            <span class="sticker sticker-lilac" data-i18n="stickerAccount">NO ACCOUNT NEEDED</span>
+            <span class="sticker sticker-outline" data-i18n="stickerPrivate">FILE TETAP DI SINI ↗</span>
+          </div>
+        </div>
+        <div class="hero-doodle" aria-hidden="true">
+          <span class="doodle-sun">✳</span>
+          <span class="doodle-orbit orbit-one"></span>
+          <span class="doodle-orbit orbit-two"></span>
+          <span class="doodle-note">your files,<br>your rules.</span>
+          <span class="doodle-spark spark-one">✳</span>
+          <span class="doodle-spark spark-two">·</span>
+        </div>
+      </section>
+
+      <section class="workbench" aria-label="Editor gambar">
+        <div class="bench-top">
+          <div class="bench-title"><span class="bench-index">01</span><div><h2>Workbench</h2><p data-i18n="benchCopy">Masukin file, pilih mode, gas.</p></div></div>
+          <div class="privacy-tag"><span>✳</span> <span data-i18n="privacy">PROSES DI BROWSER KAMU</span></div>
+        </div>
+        <div class="bench-layout">
+          <div class="left-column">
+            <div id="image-workspace">
+              <div class="upload-zone" id="drop-zone">
+              <input id="file-input" type="file" accept="image/*" multiple hidden>
+              <div class="upload-content" id="upload-empty">
+                <span class="upload-graphic" aria-hidden="true"><span>+</span><i>JPG</i><b>PNG</b><em>WEBP</em></span>
+                <strong data-i18n="dropTitle">Drop gambar di sini</strong>
+                <span class="upload-subtitle"><span data-i18n="orChoose">atau</span> <button id="browse-button" class="text-button" type="button" data-i18n="browse">cari di device</button> <span data-i18n="you">kamu</span></span>
+                <span class="file-hint" data-i18n="fileHint">JPG · PNG · WEBP · GIF · BMP &nbsp; / &nbsp; MAX 40 MP PER FILE</span>
+              </div>
+              <div class="preview-wrap" id="preview-wrap" hidden>
+                <img id="preview-image" alt="Pratinjau gambar">
+                <div class="preview-grid" id="preview-grid" hidden></div>
+                <div class="preview-badge" id="preview-badge"></div>
+                <button id="change-image" class="change-image" type="button" data-i18n="addImage">+ Tambah gambar</button>
+              </div>
+            </div>
+              <p class="file-error" id="file-error" role="alert" hidden></p>
+
+              <div class="queue-head"><div><h3><span data-i18n="queueTitle">Antrean kamu</span> <span class="queue-count" id="queue-count">0</span></h3><p id="queue-caption">Belum ada yang masuk. Kita tungguin.</p></div><button class="clear-button" id="clear-queue" type="button" hidden data-i18n="clearQueue">Kosongin antrean ×</button></div>
+              <div class="queue-list" id="queue-list" aria-live="polite">
+                <div class="queue-empty"><span data-i18n="queueEmpty">FILE KAMU NANTI MUNCUL DI SINI</span><span>↗</span></div>
+              </div>
+              <div class="queue-footer"><span><i class="queue-led"></i> <span data-i18n="privateDefault">PRIVATE BY DEFAULT</span></span><span data-i18n="maxFiles">MAX 20 FILE SEKALI JALAN</span></div>
+            </div>
+
+            <section class="pdf-workspace" id="pdf-workspace" hidden>
+              <div class="pdf-upload" id="pdf-drop-zone">
+                <input id="pdf-file-input" type="file" accept="application/pdf,image/*,.pdf" multiple hidden>
+                <span class="pdf-upload-icon" aria-hidden="true">PDF ↗</span>
+                <strong data-i18n="pdfDropTitle">Drop files here</strong>
+                <span data-i18n="pdfDropCopy">Choose PDFs or images for your selected PDF tool.</span>
+                <button id="pdf-browse-button" class="secondary-button" type="button" data-i18n="pdfBrowse">Choose files</button>
+                <p class="file-hint" data-i18n="pdfFileHint">UP TO 20 FILES · PROCESSED IN YOUR BROWSER</p>
+              </div>
+              <div class="queue-head">
+                <div><h3><span data-i18n="pdfQueueTitle">Selected files</span> <span class="queue-count" id="pdf-queue-count">0</span></h3><p id="pdf-queue-caption"></p></div>
+                <button class="clear-button" id="pdf-clear-queue" type="button" hidden data-i18n="clearQueue">Clear queue ×</button>
+              </div>
+              <div class="queue-list" id="pdf-queue-list" aria-live="polite"></div>
+              <p class="file-error" id="pdf-file-error" role="alert" hidden></p>
+            </section>
+
+            <section class="downloads-panel" id="downloads-panel" hidden aria-label="Hasil unduhan">
+              <div class="downloads-heading">
+                <div><h3><span data-i18n="downloadsTitle">File siap diambil</span> <span id="downloads-count">0</span></h3><p id="downloads-caption"></p></div>
+                <button id="download-all" type="button" data-i18n="downloadAll">Unduh semua ↗</button>
+              </div>
+              <div class="downloads-list" id="downloads-list"></div>
+            </section>
+          </div>
+
+          <aside class="settings">
+            <div class="settings-intro"><span class="settings-kicker" data-i18n="settingsKicker">02 / PILIH MAUNYA</span><span class="settings-decoration" aria-hidden="true">✳</span></div>
+            <div class="tool-picker" role="group" aria-label="Pilih kategori alat">
+              <button class="tool-card is-active" type="button" data-tool-category="image" aria-pressed="true"><span class="tool-card-icon">▧</span><span class="tool-card-name" data-i18n="toolImage">Gambar</span><span class="tool-card-state" data-i18n="toolReady">SIAP</span></button>
+              <button class="tool-card" type="button" data-tool-category="document" aria-pressed="false"><span class="tool-card-icon">PDF</span><span class="tool-card-name" data-i18n="toolDocument">Dokumen</span><span class="tool-card-state" data-i18n="toolReady">SIAP</span></button>
+              <button class="tool-card is-unavailable" type="button" data-tool-category="text" disabled title="Konversi teks memerlukan mesin di server"><span class="tool-card-icon">🅰</span><span class="tool-card-name" data-i18n="toolText">Teks</span><span class="tool-card-state" data-i18n="toolServer">BUTUH SERVER</span></button>
+              <button class="tool-card is-unavailable" type="button" data-tool-category="spreadsheet" disabled title="Konversi spreadsheet memerlukan mesin di server"><span class="tool-card-icon">#</span><span class="tool-card-name" data-i18n="toolSpreadsheet">Spreadsheet</span><span class="tool-card-state" data-i18n="toolServer">BUTUH SERVER</span></button>
+              <button class="tool-card is-unavailable" type="button" data-tool-category="audio" disabled title="Konversi audio memerlukan mesin di server"><span class="tool-card-icon">♫</span><span class="tool-card-name" data-i18n="toolAudio">Audio</span><span class="tool-card-state" data-i18n="toolServer">BUTUH SERVER</span></button>
+              <button class="tool-card is-unavailable" type="button" data-tool-category="video" disabled title="Konversi video memerlukan mesin di server"><span class="tool-card-icon">▶</span><span class="tool-card-name" data-i18n="toolVideo">Video</span><span class="tool-card-state" data-i18n="toolServer">BUTUH SERVER</span></button>
+              <button class="tool-card is-unavailable" type="button" data-tool-category="archive" disabled title="Konversi arsip memerlukan mesin di server"><span class="tool-card-icon">▤</span><span class="tool-card-name" data-i18n="toolArchive">Arsip</span><span class="tool-card-state" data-i18n="toolServer">BUTUH SERVER</span></button>
+              <button class="tool-card is-unavailable" type="button" data-tool-category="ebook" disabled title="Konversi e-book memerlukan mesin di server"><span class="tool-card-icon">▣</span><span class="tool-card-name" data-i18n="toolEbook">E-book</span><span class="tool-card-state" data-i18n="toolServer">BUTUH SERVER</span></button>
+            </div>
+            <p class="tool-picker-note" data-i18n="toolPickerNote">Pilih kategori, lalu pilih tool yang ingin dipakai. Gambar dan PDF diproses di browser; kategori lain perlu mesin server.</p>
+            <div class="mode-tabs" role="tablist" aria-label="Mode pengolahan">
+              <button class="mode-tab is-active" type="button" role="tab" aria-selected="true" data-mode="convert"><span>↗</span><span data-i18n="modeConvert">Ubah + resize</span></button>
+              <button class="mode-tab" type="button" role="tab" aria-selected="false" data-mode="compress"><span>⌁</span><span data-i18n="modeCompress">Kompres</span></button>
+              <button class="mode-tab" type="button" role="tab" aria-selected="false" data-mode="split"><span>⊞</span><span data-i18n="modeSplit">Pisah grid</span></button>
+             </div>
+            <div class="settings-content" id="panel-convert" role="tabpanel">
+              <div class="route-picker">
+                <label class="field"><span data-i18n="convertFrom">UBAH DARI</span>
+                  <select id="image-source-format" aria-label="Convert from">
+                    <option value="auto" data-i18n="autoDetect">Deteksi otomatis</option>
+                    <option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WEBP</option>
+                    <option value="image/bmp">BMP</option><option value="image/tiff">TIFF</option><option value="image/svg+xml">SVG</option>
+                    <option value="image/gif">GIF</option><option value="image/avif">AVIF</option>
+                  </select>
+                </label>
+                <button class="swap-formats" id="swap-image-formats" type="button" aria-label="Swap source and output formats" title="Swap formats">⇄</button>
+                <label class="field"><span data-i18n="convertTo">UBAH JADI</span>
+                  <select id="convert-format" class="format-select" aria-label="Output format">
+                    <option value="image/jpeg" selected data-i18n="formatJpg">JPG · ringan</option>
+                    <option value="image/png" data-i18n="formatPngTransparent">PNG · transparan</option>
+                    <option value="image/webp" data-i18n="formatWebp">WEBP · modern</option>
+                    <option value="image/bmp" data-i18n="formatBmp">BMP · bitmap</option>
+                    <option value="image/tiff" data-i18n="formatTiff">TIFF · lossless</option>
+                    <option value="image/svg+xml" data-i18n="formatSvg">SVG · gambar tertanam (bukan vector)</option>
+                    <option class="avif-option" value="image/avif" data-i18n="formatAvif">AVIF · next-gen</option>
+                  </select>
+                </label>
+              </div>
+              <div class="control-heading"><span data-i18n="dimensions">DIMENSI OUTPUT</span><span class="control-sidenote">PX</span></div>
+              <label class="field preset-field">
+                <span data-i18n="presetLabel">Ambil preset biar sat-set</span>
+                <select id="preset-select">
+                  <option value="original" data-i18n="presetOriginal">Custom / ukuran asli</option>
+                  <option value="square" data-i18n="presetSquare">Post square · 1080 × 1080</option>
+                  <option value="portrait" data-i18n="presetPortrait">Post portrait · 1080 × 1350</option>
+                  <option value="story" data-i18n="presetStory">Story / reel · 1080 × 1920</option>
+                  <option value="instagram-landscape" data-i18n="presetInstagramLandscape">Post landscape · 1080 × 566</option>
+                  <option value="landscape" data-i18n="presetLandscape">Landscape · 1200 × 630</option>
+                  <option value="hd" data-i18n="presetHd">HD video · 1920 × 1080</option>
+                  <option value="youtube" data-i18n="presetYoutube">YouTube thumbnail · 1280 × 720</option>
+                  <option value="x-header" data-i18n="presetXHeader">X header · 1500 × 500</option>
+                  <option value="facebook-cover" data-i18n="presetFacebook">Facebook cover · 820 × 312</option>
+                  <option value="linkedin-banner" data-i18n="presetLinkedin">LinkedIn banner · 1584 × 396</option>
+                  <option value="pinterest-pin" data-i18n="presetPinterest">Pinterest pin · 1000 × 1500</option>
+                  <option value="avatar" data-i18n="presetAvatar">Avatar · 512 × 512</option>
+                  <option value="thumbnail" data-i18n="presetThumbnail">Thumbnail · 320 × 320</option>
+                  <option value="a4" data-i18n="presetA4">A4 print · 2480 × 3508</option>
+                  <option value="a5" data-i18n="presetA5">A5 print · 1748 × 2480</option>
+                  <option value="a6" data-i18n="presetA6">A6 print · 1240 × 1748</option>
+                  <option value="letter" data-i18n="presetLetter">Letter print · 2550 × 3300</option>
+                  <option value="Tiktok" data-i18n="presetTiktok">TikTok · 1080 × 1920</option>
+                  <option value="twitter" data-i18n="presetTwitter">Twitter · 1200 × 675</option>
+                  <option value="whatsapp" data-i18n="presetWhatsapp">WhatsApp · 800 × 800</option>
+                  <option value="discord" data-i18n="presetDiscord">Discord · 1280 × 720</option>
+                </select>
+              </label>
+              <div class="dimension-row">
+                <label class="field"><span data-i18n="width">Lebar</span><input id="width-input" type="number" min="1" max="10000" value="1200"></label>
+                <button id="aspect-button" class="aspect-button is-locked" type="button" aria-pressed="true" title="Kunci rasio gambar">⛓</button>
+                <label class="field"><span data-i18n="height">Tinggi</span><input id="height-input" type="number" min="1" max="10000" value="800"></label>
+              </div>
+              <div class="inline-control">
+                <label class="field"><span data-i18n="fitLabel">Kalau rasio beda</span>
+                  <select id="fit-select"><option value="contain" data-i18n="fitContain">Muat semua (contain)</option><option value="cover" data-i18n="fitCover">Penuhi frame (crop)</option><option value="stretch" data-i18n="fitStretch">Paksa ukuran (stretch)</option></select>
+                </label>
+              </div>
+              <div class="quality-row" id="quality-row"><label class="quality-label" for="quality-input"><span data-i18n="quality">Quality</span><b id="quality-value">88%</b></label><input id="quality-input" type="range" min="10" max="100" value="88"><div class="range-ends"><span data-i18n="smallerFile">file lebih kecil</span><span data-i18n="sharper">lebih tajam</span></div></div>
+              <div class="transform-row">
+                <span data-i18n="quickEdit">SEDIKIT EDIT</span>
+                <div>
+                  <button id="rotate-button" type="button" title="Putar 90 derajat"><span>↻</span> <small data-i18n="rotate">PUTAR</small></button>
+                  <button id="flip-button" type="button" aria-pressed="false" title="Balik secara horizontal"><span>⇋</span> <small data-i18n="flip">FLIP</small></button>
+                  <button id="reset-all-button" type="button" title="Reset semua setelan dan hapus antrean"><span>⟲</span> <small data-i18n="resetAll">RESET</small></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="settings-content" id="panel-compress" role="tabpanel" hidden>
+              <div class="mode-intro"><span class="mode-glyph">↓</span><h3 data-i18n="compressTitle">Kecilkan ukurannya.</h3><p data-i18n="compressCopy">Dimensi tetap proporsional. Quality turun sesuai setelan kamu, metadata ekstra ikut dibuang.</p></div>
+              <label class="field"><span data-i18n="maxEdge">Batas sisi terpanjang</span><select id="max-edge"><option value="0" data-i18n="originalSize">Ukuran asli</option><option value="2560" data-i18n="edgeHighRes">2560 px · high-res</option><option value="1920" data-i18n="edgeScreen">1920 px · layar</option><option value="1280" selected data-i18n="edgeLight">1280 px · ringan</option><option value="800" data-i18n="edgeExtraLight">800 px · super ringan</option><option value="512" data-i18n="edgeThumbnail">512 px · thumbnail</option><option value="256" data-i18n="edgeTiny">256 px · kecil banget</option></select></label>
+              <div class="quality-row" id="compress-quality-row"><label class="quality-label" for="compress-quality"><span data-i18n="compressIntensity">Intensitas kompres</span><b id="compress-quality-value">72%</b></label><input id="compress-quality" type="range" min="10" max="100" value="72"><div class="range-ends"><span data-i18n="smallest">paling kecil</span><span data-i18n="mostDetail">paling detail</span></div></div>
+              <div class="control-heading format-heading"><span data-i18n="outputFormat">FORMAT OUTPUT</span><span class="control-sidenote" data-i18n="chooseOne">PILIH SATU</span></div>
+              <div class="format-options compress-format-options">
+                <select class="format-select" id="compress-format" aria-label="Compression output format">
+                  <option value="image/jpeg" selected data-i18n="formatJpg">JPG · ringan</option>
+                  <option value="image/png" data-i18n="formatPngLossless">PNG · lossless</option>
+                  <option value="image/webp" data-i18n="formatWebp">WEBP · modern</option>
+                  <option value="image/bmp" data-i18n="formatBmp">BMP · bitmap</option>
+                  <option value="image/tiff" data-i18n="formatTiff">TIFF · lossless</option>
+                  <option value="image/svg+xml" data-i18n="formatSvg">SVG · gambar tertanam (bukan vector)</option>
+                  <option class="avif-option" value="image/avif" data-i18n="formatAvif">AVIF · next-gen</option>
+                </select>
+              </div>
+              <div class="compress-tip"><span>✳</span><p data-i18n="metadataNote">Canvas otomatis menghapus EXIF / metadata saat ekspor. Warna & privasi tetap aman.</p></div>
+              <div class="compress-format-row"><span>HASIL</span><strong id="compress-format-label">JPG · optimized</strong></div>
+            </div>
+
+            <div class="settings-content" id="panel-split" role="tabpanel" hidden>
+              <div class="mode-intro"><span class="mode-glyph">⊞</span><h3 data-i18n="splitTitle">Grid it. Post it.</h3><p data-i18n="splitCopy">Belah semua gambar di antrean jadi potongan rapi. Tiap potongan bisa diunduh sendiri.</p></div>
+              <div class="dimension-row split-fields">
+                <label class="field"><span data-i18n="columns">Kolom</span><input id="columns-input" type="number" min="1" max="20" value="3"></label>
+                <span class="split-by">×</span>
+                <label class="field"><span data-i18n="rows">Baris</span><input id="rows-input" type="number" min="1" max="20" value="3"></label>
+              </div>
+              <p class="split-summary" id="split-summary">9 potongan per gambar</p>
+              <div class="control-heading format-heading"><span data-i18n="tileFormat">FORMAT POTONGAN</span><span class="control-sidenote" data-i18n="chooseOne">PILIH SATU</span></div>
+              <div class="format-options split-format-options">
+                <select class="format-select" id="split-format" aria-label="Tile format">
+                  <option value="image/jpeg" selected data-i18n="formatJpg">JPG · ringan</option>
+                  <option value="image/png" data-i18n="formatPngTransparent">PNG · transparan</option>
+                  <option value="image/webp" data-i18n="formatWebp">WEBP · modern</option>
+                  <option value="image/bmp" data-i18n="formatBmp">BMP · bitmap</option>
+                  <option value="image/tiff" data-i18n="formatTiff">TIFF · lossless</option>
+                  <option value="image/svg+xml" data-i18n="formatSvg">SVG · gambar tertanam (bukan vector)</option>
+                  <option class="avif-option" value="image/avif" data-i18n="formatAvif">AVIF · next-gen</option>
+                </select>
+              </div>
+              <div class="compress-tip"><span>↗</span><p data-i18n="splitPreviewNote">Preview di sebelah kiri bakal nunjukin garis potongnya.</p></div>
+            </div>
+
+            <div class="settings-content" id="panel-pdf" role="tabpanel" hidden>
+              <div class="mode-intro"><span class="mode-glyph">PDF</span><h3 data-i18n="pdfTitle">PDF, your way.</h3><p data-i18n="pdfCopy">Convert images, export pages, split files, or merge documents.</p></div>
+              <div class="route-picker pdf-route-picker" id="pdf-route-picker">
+                <label class="field"><span data-i18n="convertFrom">UBAH DARI</span><select id="pdf-source-format" aria-label="Convert from"><option value="image" data-i18n="sourceImages">Gambar</option><option value="pdf">PDF</option></select></label>
+                <button class="swap-formats" id="swap-pdf-formats" type="button" aria-label="Swap source and output formats" title="Swap formats">⇄</button>
+                <label class="field"><span data-i18n="convertTo">UBAH JADI</span><select id="pdf-target-format" aria-label="Convert to"><option value="application/pdf">PDF</option><option value="image/png">PNG</option><option value="image/jpeg">JPG</option></select></label>
+              </div>
+              <label class="field"><span data-i18n="pdfActionLabel">Choose a PDF tool</span>
+                <select id="pdf-action">
+                  <option value="images-to-pdf" data-i18n="pdfActionImages">Images → one PDF</option>
+                  <option value="pdf-to-images" data-i18n="pdfActionPages">PDF pages → images</option>
+                  <option value="split-pdf" data-i18n="pdfActionSplit">Split PDF into pages</option>
+                  <option value="merge-pdf" data-i18n="pdfActionMerge">Merge PDFs</option>
+                </select>
+              </label>
+              <div class="compress-tip"><span>✳</span><p id="pdf-action-note" data-i18n="pdfActionImagesNote">Each image becomes one page in a single PDF.</p></div>
+            </div>
+
+            <button id="convert-button" class="primary-button" type="button" disabled><span id="convert-label">Proses gambar</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+            <button id="cancel-button" class="secondary-button" type="button" hidden data-i18n="cancel">Batal</button>
+            <p class="button-note" id="convert-note" data-i18n="convertNote">Proses di browser kamu. File nggak ke mana-mana.</p>
+            <p class="button-note" id="convert-error" role="alert" hidden></p>
+            
+          </aside>
+        </div>
+      </section>
+
+      <section class="how-section" id="how-it-works">
+        <div class="how-heading"><span class="bench-index">03</span><h2 data-i18n="howTitle">Sesimpel itu kok.</h2><span class="how-squiggle" aria-hidden="true">〰</span></div>
+        <div class="how-steps"><article><span>01</span><h3 data-i18n="stepOneTitle">Masukin file</h3><p data-i18n="stepOneCopy">Drag gambar atau klik buat pilih. Bisa lebih dari satu, no drama.</p></article><article><span>02</span><h3 data-i18n="stepTwoTitle">Pilih mode</h3><p data-i18n="stepTwoCopy">Convert, compress, atau bikin grid. Setting secukupnya, bukan kebanyakan.</p></article><article><span>03</span><h3 data-i18n="stepThreeTitle">Download & cabut</h3><p data-i18n="stepThreeCopy">Hasilnya langsung ke device. Nggak ada akun, nggak ada upload-uploadan.</p></article></div>
+      </section>
+      <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>loka<span class="brand-dot">.</span></span></a><span data-i18n="footerCopy">MADE FOR YOUR CAMERA ROLL, NOT OUR SERVERS.</span><span>© 2026 LOKA IMAGE LAB</span></footer>
+    </main>
+    <script src="./pdf-tools.bundle.js" defer></script>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

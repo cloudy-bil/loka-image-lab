@@ -1,0 +1,17 @@
+{
+  "name": "loka-image-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser-based image and PDF tools for Loka Image Lab",
+  "scripts": {
+    "build:pdf": "esbuild pdf-tools.js --bundle --format=iife --global-name=PDFTools --outfile=pdf-tools.bundle.js && node -e \"require('node:fs').copyFileSync('node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs', 'pdf.worker.bundle.mjs')\"",
+    "build:site": "node scripts/build-site.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.2"
+  },
+  "dependencies": {
+    "pdf-lib": "1.17.1",
+    "pdfjs-dist": "4.10.38"
+  }
+}
