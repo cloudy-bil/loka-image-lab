@@ -1,4 +1,14 @@
 # Loka — Image Lab
+
+Loka Image Lab is a free, English-first online image and PDF toolkit. The homepage introduces the tools, explains browser-based processing, and includes a usage guide and FAQ. The editor supports image resizing and conversion, compression, grid splitting, and common PDF tasks.
+
+- `index.html` is the complete landing page; the Workbench lives on `tools.html`.
+- The shared English and Indonesian translations are loaded from `translations.js`; the homepage uses `home.js` and the Workbench uses `app.js`.
+
+- Image and PDF files are processed in the visitor's browser instead of being uploaded to a Loka conversion server.
+- The homepage includes canonical, Open Graph, and social-card metadata, WebApplication and FAQ structured data, plus a generated sitemap and `robots.txt`.
+- The public default language and search metadata are English; the interface can also be switched to Indonesian.
+
 - Text and spreadsheet categories are shown as unavailable too. All categories that need a server are disabled and labeled rather than presented as working converters.
 
 
@@ -57,4 +67,3 @@ The repository needs to be public for GitHub Pages on GitHub Free. Google indexi
 
 
 Keep a privacy policy and any required cookie or advertising disclosures up to date if you add analytics or ads.
-
